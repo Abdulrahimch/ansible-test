@@ -1,0 +1,35 @@
+##In thos file we will clarify how to read, write, attend....etc files in Python.
+##To open a file we use the bult-in "open" funtion. EXP : f = open("(FILE-NAME)", "METHOD(r,w,a)").
+##files in python are catagorized as either "text" or "Binary".By default the text is considerd as 'text' unless we explicitly mention the type of the file through add "t" for text, or "b" for binary next to the methon as follow: f = opne("FILE-NAME", "r(t/b)").
+
+###########################################################################################################################################
+
+
+###TO access the file we use the bult-in "read" function. which returns the content as string by default. 
+EXP: content = f.read().
+
+### In the case we wana play a little bit w the cursor by having some fun while we are controlling the posion of the cursor.
+the function that gives such flexability is "seek()". It is used as follow. EXP:f.seek(5). which tells intrepreter to take the cursor to the po-siotion of 5.
+
+###Now if we wana read the 8 characters after where the cursor is ("which is 5 in our example") we set that in the "read()" function like follow: print(f.read(8)).
+
+########################################################################################################################################
+
+###To see where  the cursor  is we call the "tell()" function. EXP: print(f.teLL()) 
+
+########################################################################################################################################
+
+## Here we will clarify how to read a file as a list:
+
+## we either call the function 'splitlines()'  in this way "print(f.read().splitlines())". in this way the file will be exactly writtin in a li-st. in that each lines will be considered as an element.
+
+## the second function is "readlines()" and in this way the text is written in a list adding a "\n" in the end of each line.
+EXP : f.readlines().
+
+########################################################################################################################################
+
+##To grant the file the write and read permissions, We use the "r+" access mode. EXP: f = open("file.txt", "r+").
+
+##########################################################################################################################################
+
+
