@@ -1,0 +1,8 @@
+---
+- name: Test ssh connection
+  hosts: all
+  tasks:
+    - name: we will use when in this lab
+      command: hostname -s 
+      when: (ansible_distribution == "Amazon" and ansible_all_ipv4_addresses == "172.31.31.161") or
+            (ansible_distribution == "Amazon" and ansible_all_ipv4_addresses == "172.31.31.98") 

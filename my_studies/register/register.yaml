@@ -1,0 +1,12 @@
+---
+- name: Test ssh connection
+  hosts: all
+  tasks: 
+    - name: fetch files from remote machine into ours
+      command: hostname -s 
+      register: host_output
+     
+    - name: show hostname 
+      debug: 
+        var: host_output.stdout
+     

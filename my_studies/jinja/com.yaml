@@ -1,0 +1,24 @@
+---
+- name: Test ssh connection
+  hosts: ubuntu
+  
+  tasks:
+    - name: show me the entire list
+      debug:
+        msg: >
+               __##this is ansible for jinja##__
+               {#will test my if statement -#}
+               {% if ansible_hostname== "ip-172-31-31-98" -%}
+                     this linux1 machine
+               {% elif ansible_hostname== "ip-172-31-31-161" -%}
+                     this is linux2
+               {% else -%}
+                     this is nothing 
+               {% endif %}
+      
+
+
+
+
+          
+  

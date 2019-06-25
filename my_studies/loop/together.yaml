@@ -1,0 +1,17 @@
+---
+- name: this lab for loops
+  hosts: ubuntu
+  
+  
+  tasks: 
+    - name: test with_together  which maps a list to  another one
+      file: 
+        dest: "/home/{{ item.0 }}/{{ item.1 }}"
+        owner: "{{ item.0 }}"
+        group: "{{ item.0 }}"
+        state: directory
+        with_together:
+          - [abood, ali, yaser, obaida]
+          - [ cofee, movies, milk, Chochlate]
+        
+      

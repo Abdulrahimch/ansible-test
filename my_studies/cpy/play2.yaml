@@ -1,0 +1,18 @@
+---
+- name: Test ssh connection
+  hosts: linux
+  gather_facts: false
+  vars:
+    text: "this is the second change/n"
+  tasks:
+    - copy:
+        content: "{{text}}"
+        dest: /home/ec2-user/motd
+      notify: moth generated
+
+  handlers:
+    - name: moth generated
+      debug:
+        msg: Hello there      
+          
+  

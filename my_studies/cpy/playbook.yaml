@@ -1,0 +1,14 @@
+---
+- name: Test ssh connection
+  hosts: linux
+  gather_facts: false
+
+  tasks:
+    - copy:
+        src: /home/abdulrahim/ll
+        dest: /home/ec2-user/cc
+        owner: ec2-user
+
+
+          
+  

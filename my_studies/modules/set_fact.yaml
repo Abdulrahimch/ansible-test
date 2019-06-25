@@ -1,0 +1,25 @@
+---
+- name: Test ssh connection
+  hosts: all
+  
+  tasks:
+    - set_fact:
+        my_fact: my   ansible code
+        webserver_application_port: 8080 
+        ansible_distribution: linux
+        cacheable: yes         
+    - name: display  My_fact's value
+      debug:
+        msg: "{{my_fact}}"
+
+    - name: display the modifided ansible_distr value
+      debug:
+        msg: "{{webserver_application_port}}"
+
+
+    - name: display the modifided ansible_distr value
+      debug:
+        msg: "{{ansible_distribution}}"
+
+          
+  

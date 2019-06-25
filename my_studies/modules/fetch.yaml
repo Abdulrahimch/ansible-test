@@ -1,0 +1,9 @@
+---
+- name: Test ssh connection
+  hosts: all
+  tasks: 
+    - name: fetch files from remote machine into ours
+      fetch:
+        src: /etc/ssh/ssh_config
+        dest: /tmp/results
+ 

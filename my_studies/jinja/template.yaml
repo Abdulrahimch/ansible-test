@@ -1,0 +1,10 @@
+---
+- name: Test ssh connection
+  hosts: ubuntu
+   
+  tasks:
+    - name: show me the entire list
+      template: 
+        src: temp
+        dest: "/tmp/new"
+ 

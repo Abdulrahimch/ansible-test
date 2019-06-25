@@ -1,0 +1,9 @@
+---
+- name: test test
+  hosts: all
+  gather_facts: false
+
+  tasks: 
+  name : print smth
+   
+

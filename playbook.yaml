@@ -1,0 +1,29 @@
+---
+- name: this is the installation of Apache server
+  hosts: all
+  gather_facts: false
+### NOte: httpd used with Redhat, apache2 used with Debian
+  tasks:
+    - name: intall Apache server
+      yum: 
+        name: httpd
+        state: present
+     
+
+    - name:  issue "yum install Basic Web Server" in Ansbile
+      service:
+        name: httpd
+        state: started
+    
+     
+###by default when we first install httpd.Apache server will support only HTML files. so we need to issue the following command:yum groupinstall "Basic Web Server" lets do it in Ansible
+###Note: dont forget to check whether the group you wana install is "Environmrnt groups" or "Package groups".Use “yum group list hidden ids” to see in which catagory the package you wana install falls into.Or try "yum grouplist".      
+    
+    - yum:
+        name: “@^Web-Server-Basic-environment" 
+        state: present   
+    
+    - firewalld:
+        service: http
+        permanent: yes
+        state: enabled 

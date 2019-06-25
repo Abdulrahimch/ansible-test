@@ -1,0 +1,15 @@
+---
+- name: Test ssh connection
+  hosts: all
+  tasks:
+    - name: we will use when and register in this lab
+      command: hostname -s 
+      when: (ansible_distribution=="Amazon" and ansible_all_ipv4_addresses==["172.31.31.161"]) or
+            (ansible_distribution=="Amazon" and ansible_all_ipv4_addresses==["172.31.31.98"])
+      register: ho_output
+    
+    
+    - name: display the details of the matched machine
+      debug: 
+        var: ho_output
+  #### Note when the value is a list, we must add the lists' brackets in the value as what we did above

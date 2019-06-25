@@ -1,0 +1,15 @@
+---
+- name: show the entire playbook
+  hosts: all
+  gather_facts: false
+  
+   
+  tasks:
+    - name: show this to prove the entire playbook
+      debug:
+        msg: HEllo playbook
+
+
+...
+
+

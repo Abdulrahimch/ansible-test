@@ -1,0 +1,15 @@
+---
+- name: lets try include
+  hosts: all
+  gather_facts: flase
+
+  tasks: 
+    - debug: 
+        msg: this msg included in play1.yaml
+         
+            
+    include: play2.yaml
+
+
+...
+ 

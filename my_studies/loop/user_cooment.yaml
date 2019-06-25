@@ -1,0 +1,18 @@
+---
+- name: this lab for loops
+  hosts: ubuntu
+  
+  
+  tasks: 
+    - name: creat users and comments with_dict loop
+      user:
+        name: "{{ item.key }}"
+        comment: "{{ item.value.Full-name }}"
+      with_dict:
+        james:  
+          Full-name: james Down
+        Ali:
+          Full-name: Ali Shiha
+        laly:
+          Full-name: Laly Atom
+       

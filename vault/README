@@ -1,0 +1,15 @@
+this file talks about what i can do with vault
+
+vault is used to encrypt (data, passwords, files, playbooks.....etc) in that we provide a vault-password while instructing the machine to encrypt smth.
+
+EXP: ansible_vault  --ask-vault-pass encrypt playbook.yaml
+in the example above playbook.yaml will be encrypted. For you to be able to run the playbook. you will be asked to provide the right password.
+
+
+NOTE: the playbook.yaml has been encrypted and you need to provide the the VAult-pass to have the ability the decrypt the run the playbook.
+
+
+###########################
+now to decrypt the encrypted file.
+
+ansible-vault   --ask-vaul-pass decrypt playbook.yaml

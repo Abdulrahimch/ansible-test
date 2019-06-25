@@ -1,0 +1,15 @@
+---
+- name: Test ssh connection
+  hosts: ubuntu
+  
+  tasks:
+    - name: show me the entire list
+      debug:
+        msg: >
+               __##this is ansible for  jinja##__
+               {#will test my for statement -#}
+               {% for x in ansible_all_ipv4_addresses -%}
+                  ip address entry is {{x}}
+               {% endfor %}
+
+

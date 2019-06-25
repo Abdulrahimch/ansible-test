@@ -1,0 +1,9 @@
+---
+- name: Test ssh connection
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: show me the entire list
+      debug:
+        msg: "{{ansible_ssh_user}}"
+      

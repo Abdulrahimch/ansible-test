@@ -1,0 +1,22 @@
+---
+- name: Test ssh connection
+  hosts: all
+  
+  tasks:
+    - name: will add linux1 to adhoc_group1 and adhoc_group2
+      add_host:
+        name: linux1
+        groups: adhoc_group1, adhoc_group2
+
+- hosts: adhoc_group1
+
+  tasks:
+    - name: ping all in adhoc_group1
+      ping: 
+
+
+- hosts: adhoc_group2
+  tasks: 
+    - name: say hi to all in adhoc_group2
+      debug:
+        msg: Hello world

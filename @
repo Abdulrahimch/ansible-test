@@ -1,0 +1,5 @@
+[default]
+inventory= inventory_aws/ec2.py
+host_key_checking= false
+forks= 20
+

@@ -1,0 +1,19 @@
+---
+- name: this lab for loops
+  hosts: ubuntu
+  
+  
+  tasks: 
+    - name: display with_ effects
+      user:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - james
+        - Ali
+        - john
+        - lily
+
+
+# Three dots indicate the end of a Yaml document.
+...

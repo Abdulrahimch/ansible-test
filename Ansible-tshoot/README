@@ -1,0 +1,16 @@
+---this file contains some useful methods of how to tshoot through Ansible
+### the use of syntax-check
+
+EXP1: ansible-playbook "{{playbook name}}"  --syntax-check
+
+### the use of step: if you wana go through the playbook taking the tasks step by step then it would be so handy to use the "step" parameter.
+
+EXP2: ansible-playbook "{{playbook name}}" --step
+
+
+###if we wana start running our plabook from a specific task then we shld use the "start-at-task="{{the name of the task}}" 
+
+EXP3:ansible-playbook "{{playbook-name}}" --start-at-task="name of task"
+
+
+###if you wana log everythin you can do that by adding the command of "log_path="the path  where you wana save your logs" in the ansible.cfg file

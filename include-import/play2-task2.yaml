@@ -1,0 +1,6 @@
+---
+- name: this file will be called by play1.yaml 
+  debug:
+    msg: this is play2.yaml
+
+...

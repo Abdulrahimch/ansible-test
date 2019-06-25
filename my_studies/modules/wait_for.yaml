@@ -1,0 +1,9 @@
+---
+- name: Test ssh connection
+  hosts: all
+  
+  tasks:
+    - name: wwat for the server to be running on port 80
+      wait_for:
+        port: 80
+      

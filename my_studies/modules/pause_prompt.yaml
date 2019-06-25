@@ -1,0 +1,8 @@
+---
+- name: Test ssh connection
+  hosts: all
+  tasks: 
+    - name: fetch files from remote machine into ours
+      pause:
+        prompt: checking your webserver.Enter to continue
+ 

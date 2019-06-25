@@ -1,0 +1,20 @@
+---
+- name: this lab for loops
+  hosts: ubuntu
+  
+  
+  tasks: 
+    - name: display with_ effects
+      copy: 
+        content: "Welcome to {{item}} linux - ansibleis here\n"
+        dest: /etc/motd
+      notify: motd change
+      with_items: ['Amazon', 'Ubuntu']
+      when: ansible_distribution == item
+
+
+  handlers:
+    - name: motd change
+      debug:
+        msg: the motd was changed
+

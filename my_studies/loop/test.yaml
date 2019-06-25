@@ -1,0 +1,25 @@
+---
+- name: this lab for loops
+  hosts: ubuntu
+  
+  
+  tasks: 
+    - name: test with_dict loop
+      with_dict:
+        james:  
+          Full-name: james Down
+        Ali:
+          Full-name: Ali Shiha
+        laly:
+          Full-name: Laly Atom
+       
+      name: print keys
+      debug: 
+        msg: "{{item.key}}"
+
+
+    
+         
+
+# Three dots indicate the end of a Yaml document.
+...
